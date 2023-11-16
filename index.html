@@ -24,10 +24,21 @@
           class="form-control"
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
+          v-model="newAliment.name"
         />
+        <button class="btn-primary w-25" @click="addAliment">Segnare !</button>
       </div>
       <ol class="list-group list-group-numbered w-25 m-auto">
-        <li class="list-group-item">A list item</li>
+        <li
+          class="list-group-item position-relative"
+          v-for="(Aliment,index) in allAliments"
+          :key="index"
+        >
+          {{Aliment.name}}
+          <button class="w-25 position-absolute end-0" @click="takeOff(index)">
+            X
+          </button>
+        </li>
       </ol>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
