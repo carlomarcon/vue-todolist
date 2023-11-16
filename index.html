@@ -25,6 +25,7 @@
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
           v-model="newAliment.name"
+          @keyup.enter="addAliment"
         />
         <button class="btn-primary w-25" @click="addAliment">Segnare !</button>
       </div>
